@@ -31,7 +31,7 @@ export function Footer() {
                             Contact Us
                         </Link>
                         <a
-                            href="https://theiyergroup.com"
+                            href="https://www.iyergrp.com/"
                             target="_blank"
                             rel="noopener noreferrer"
                             className="text-sm font-medium text-slate-400 hover:text-white transition-colors flex items-center gap-1"

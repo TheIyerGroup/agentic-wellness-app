@@ -14,7 +14,7 @@ export default function ContactPage() {
                         For support, enterprise inquiries, or general questions, please reach out to our team at The Iyer Group.
                     </p>
                     <a
-                        href="https://theiyergroup.com"
+                        href="https://www.iyergrp.com/"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="inline-flex h-12 items-center justify-center rounded-xl bg-gradient-to-r from-emerald-500 to-cyan-500 px-8 text-sm font-bold text-slate-950 shadow-lg hover:opacity-90 transition-opacity"
