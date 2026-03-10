@@ -1,6 +1,11 @@
+"use client";
+
 import Link from "next/link";
+import { useState } from "react";
+import { ContactModal } from "./ContactModal";
 
 export function Footer() {
+    const [isContactModalOpen, setIsContactModalOpen] = useState(false);
     return (
         <footer className="border-t border-white/10 bg-slate-950/80 backdrop-blur-xl py-12 relative overflow-hidden z-20">
             {/* Background Glow */}
@@ -24,12 +29,12 @@ export function Footer() {
                         >
                             FAQs
                         </Link>
-                        <Link
-                            href="/contact"
+                        <button
+                            onClick={() => setIsContactModalOpen(true)}
                             className="text-sm font-medium text-slate-400 hover:text-cyan-400 transition-colors"
                         >
                             Contact Us
-                        </Link>
+                        </button>
                         <a
                             href="https://www.iyergrp.com/"
                             target="_blank"
@@ -41,6 +46,11 @@ export function Footer() {
                     </nav>
                 </div>
             </div>
+
+            <ContactModal
+                isOpen={isContactModalOpen}
+                onClose={() => setIsContactModalOpen(false)}
+            />
         </footer>
     );
 }
