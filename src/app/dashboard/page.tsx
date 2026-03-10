@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Sparkles, AlertTriangle, CalendarDays } from "lucide-react";
+import Link from "next/link";
 import { GeneratePlanClient } from "./GeneratePlanClient";
 import { db } from "@/db";
 import { users, wellnessPlans } from "@/db/schema";
@@ -36,9 +37,11 @@ export default async function DashboardPage() {
                     <h1 className="text-4xl font-extrabold tracking-tight text-slate-900 dark:text-slate-50">Welcome Back.</h1>
                     <p className="text-slate-500 mt-2 text-lg">Your wellness logistics dashboard is ready for optimization.</p>
                 </div>
-                <Button size="lg" className="bg-white text-slate-900 border border-slate-200 hover:bg-slate-50 shadow-sm dark:bg-slate-900 dark:text-white dark:border-slate-800 dark:hover:bg-slate-800 font-semibold gap-2">
-                    <CalendarDays className="w-4 h-4" /> View History
-                </Button>
+                <Link href="/dashboard/history">
+                    <Button size="lg" className="bg-white text-slate-900 border border-slate-200 hover:bg-slate-50 shadow-sm dark:bg-slate-900 dark:text-white dark:border-slate-800 dark:hover:bg-slate-800 font-semibold gap-2">
+                        <CalendarDays className="w-4 h-4" /> View History
+                    </Button>
+                </Link>
             </header>
 
             {/* Medical Disclaimer Alert - Premium UI */}

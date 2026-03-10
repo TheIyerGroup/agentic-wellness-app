@@ -32,7 +32,7 @@ export default function PricingPage() {
                             <Sparkles className="w-8 h-8 text-emerald-400" />
                         </div>
                         <div className="flex justify-center items-baseline gap-2 mb-4">
-                            <span className="text-6xl font-extrabold tracking-tighter text-white">$20</span>
+                            <span className="text-6xl font-extrabold tracking-tighter text-white">$9.99</span>
                             <span className="text-slate-500 font-medium text-lg">/ month</span>
                         </div>
                         <p className="text-slate-400 text-sm leading-relaxed">
@@ -66,9 +66,19 @@ export default function PricingPage() {
                             <span className="text-cyan-300 font-semibold drop-shadow-sm">100 AI Generation Credits / month</span>
                         </div>
 
-                        <Button size="lg" className="h-14 w-full mt-6 bg-gradient-to-r from-emerald-500 to-cyan-500 hover:from-emerald-400 hover:to-cyan-400 text-slate-950 font-bold text-lg rounded-xl shadow-2xl shadow-emerald-500/25 transition-all">
-                            Subscribe Now
-                        </Button>
+                        <form action="/api/checkout" method="POST">
+                            <Button size="lg" type="submit" className="h-14 w-full mt-6 bg-gradient-to-r from-emerald-500 to-cyan-500 hover:from-emerald-400 hover:to-cyan-400 text-slate-950 font-bold text-lg rounded-xl shadow-2xl shadow-emerald-500/25 transition-all">
+                                Subscribe Now
+                            </Button>
+                        </form>
+                        <div className="text-center space-y-2 mt-4">
+                            <p className="text-xs text-slate-500 flex items-center justify-center gap-1.5 font-medium">
+                                Secure payments accepted via:
+                            </p>
+                            <p className="text-xs text-slate-400">
+                                PayPal, Google Pay, Apple Pay, Visa, Mastercard, and Amex
+                            </p>
+                        </div>
                     </div>
                 </div>
 

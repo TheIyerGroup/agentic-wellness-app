@@ -13,6 +13,8 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+import { Footer } from "@/components/Footer";
+
 export const metadata: Metadata = {
   title: "Agentic Wellness Automator",
   description: "Your AI-powered wellness and nutrition application.",
@@ -27,9 +29,12 @@ export default function RootLayout({
     <ClerkProvider>
       <html lang="en">
         <body
-          className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+          className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-screen flex flex-col`}
         >
-          {children}
+          <div className="flex-1 flex flex-col">
+            {children}
+          </div>
+          <Footer />
         </body>
       </html>
     </ClerkProvider>
