@@ -30,17 +30,7 @@ export async function POST(req: Request) {
             customer_email: clerkUser.emailAddresses[0].emailAddress,
             line_items: [
                 {
-                    price_data: {
-                        currency: "USD",
-                        product_data: {
-                            name: "Agentic Pro",
-                            description: "100 AI Generation Credits per month",
-                        },
-                        unit_amount: 999, // $9.99
-                        recurring: {
-                            interval: "month",
-                        },
-                    },
+                    price: process.env.NEXT_PUBLIC_STRIPE_PRICE_ID!,
                     quantity: 1,
                 },
             ],

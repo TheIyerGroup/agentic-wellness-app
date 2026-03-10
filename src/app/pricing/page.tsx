@@ -32,8 +32,8 @@ export default function PricingPage() {
                             <Sparkles className="w-8 h-8 text-emerald-400" />
                         </div>
                         <div className="flex justify-center items-baseline gap-2 mb-4">
-                            <span className="text-6xl font-extrabold tracking-tighter text-white">$9.99</span>
-                            <span className="text-slate-500 font-medium text-lg">/ month</span>
+                            <span className="text-6xl font-extrabold tracking-tighter text-white">$24.99</span>
+                            <span className="text-slate-500 font-medium text-lg">/ year</span>
                         </div>
                         <p className="text-slate-400 text-sm leading-relaxed">
                             Everything you need for comprehensive AI wellness scheduling and precise nutritional logistics.
@@ -63,7 +63,7 @@ export default function PricingPage() {
                             <div className="p-1 rounded-full bg-cyan-500/20 mt-0.5">
                                 <Check className="h-4 w-4 text-cyan-400" strokeWidth={3} />
                             </div>
-                            <span className="text-cyan-300 font-semibold drop-shadow-sm">100 AI Generation Credits / month</span>
+                            <span className="text-cyan-300 font-semibold drop-shadow-sm">1,200 AI Generation Credits / year</span>
                         </div>
 
                         <form action="/api/checkout" method="POST">
