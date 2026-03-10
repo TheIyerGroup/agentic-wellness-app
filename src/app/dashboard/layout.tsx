@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { UserButton } from "@clerk/nextjs";
 import { auth, currentUser } from "@clerk/nextjs/server";
-import { LayoutDashboard, User, CreditCard, Activity, Coins } from "lucide-react";
+import { LayoutDashboard, User, CreditCard, Activity, Coins, ShieldAlert } from "lucide-react";
 import { db } from "@/db";
 import { users } from "@/db/schema";
 import { eq } from "drizzle-orm";
@@ -43,6 +43,10 @@ export default async function DashboardLayout({
                     <Link href="/dashboard/profile" className="group flex items-center gap-3 px-4 py-3 rounded-xl text-slate-600 dark:text-slate-300 hover:bg-emerald-50 dark:hover:bg-white/5 hover:text-emerald-600 dark:hover:text-emerald-400 transition-all font-medium">
                         <User className="w-5 h-5 transition-transform group-hover:scale-110" />
                         My Profile
+                    </Link>
+                    <Link href="/dashboard/privacy" className="group flex items-center gap-3 px-4 py-3 rounded-xl text-slate-600 dark:text-slate-300 hover:bg-emerald-50 dark:hover:bg-white/5 hover:text-emerald-600 dark:hover:text-emerald-400 transition-all font-medium">
+                        <ShieldAlert className="w-5 h-5 transition-transform group-hover:scale-110" />
+                        Privacy & Data
                     </Link>
                     <Link href="/pricing" className="group flex items-center gap-3 px-4 py-3 rounded-xl text-slate-600 dark:text-slate-300 hover:bg-emerald-50 dark:hover:bg-white/5 hover:text-emerald-600 dark:hover:text-emerald-400 transition-all font-medium">
                         <CreditCard className="w-5 h-5 transition-transform group-hover:scale-110" />
