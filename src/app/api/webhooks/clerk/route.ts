@@ -3,7 +3,7 @@ import { headers } from 'next/headers'
 import { WebhookEvent } from '@clerk/nextjs/server'
 import { db } from '@/db'
 import { users } from '@/db/schema'
-import { NextResponse } from 'next/response'
+import { NextResponse } from 'next/server'
 
 export async function POST(req: Request) {
     const SIGNING_SECRET = process.env.CLERK_WEBHOOK_SECRET
