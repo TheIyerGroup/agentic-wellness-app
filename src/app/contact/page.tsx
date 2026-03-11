@@ -22,6 +22,7 @@ export default function ContactPage() {
                 },
                 body: JSON.stringify({
                     access_key: formData.get("access_key"),
+                    subject: formData.get("subject"),
                     name: formData.get("name"),
                     email: formData.get("email"),
                     message: formData.get("message"),
@@ -67,6 +68,7 @@ export default function ContactPage() {
                     ) : (
                         <form onSubmit={handleSubmit} className="space-y-6">
                             <input type="hidden" name="access_key" value="2fe05607-dbf7-47b3-a48b-c6d1ad14bbc5" />
+                            <input type="hidden" name="subject" value="New Contact Message from Agentic Wellness Main App" />
                             <div>
                                 <label htmlFor="name" className="block text-sm font-medium text-slate-300 mb-2">Name</label>
                                 <input 
