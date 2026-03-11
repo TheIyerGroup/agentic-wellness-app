@@ -21,7 +21,7 @@ export default function ContactPage() {
                     Accept: "application/json",
                 },
                 body: JSON.stringify({
-                    access_key: "2fe05607-dbf7-47b3-a48b-c6d1ad14bbc5",
+                    access_key: formData.get("access_key"),
                     name: formData.get("name"),
                     email: formData.get("email"),
                     message: formData.get("message"),
@@ -66,6 +66,7 @@ export default function ContactPage() {
                         </div>
                     ) : (
                         <form onSubmit={handleSubmit} className="space-y-6">
+                            <input type="hidden" name="access_key" value="2fe05607-dbf7-47b3-a48b-c6d1ad14bbc5" />
                             <div>
                                 <label htmlFor="name" className="block text-sm font-medium text-slate-300 mb-2">Name</label>
                                 <input 
