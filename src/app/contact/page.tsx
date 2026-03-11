@@ -21,7 +21,7 @@ export default function ContactPage() {
                     Accept: "application/json",
                 },
                 body: JSON.stringify({
-                    access_key: process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY,
+                    access_key: "2fe05607-dbf7-47b3-a48b-c6d1ad14bbc5",
                     name: formData.get("name"),
                     email: formData.get("email"),
                     message: formData.get("message"),
