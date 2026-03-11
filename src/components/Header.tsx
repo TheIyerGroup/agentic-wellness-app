@@ -1,9 +1,12 @@
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Activity } from "lucide-react";
-import { SignedIn, SignedOut, UserButton } from "@clerk/nextjs";
+import { UserButton } from "@clerk/nextjs";
+import { auth } from "@clerk/nextjs/server";
 
-export function Header() {
+export async function Header() {
+    const { userId } = await auth();
+
     return (
         <header className="px-6 lg:px-12 flex h-20 items-center justify-between border-b border-white/10 bg-slate-950/80 backdrop-blur-md sticky top-0 z-[100] w-full">
             <Link href="/" className="flex items-center gap-3 relative z-10 hover:opacity-90 transition-opacity">
@@ -13,26 +16,30 @@ export function Header() {
                 <span className="text-xl font-bold tracking-tight text-white">Agentic Wellness</span>
             </Link>
             <nav className="flex gap-4 relative z-10 items-center">
-                <SignedOut>
-                    <Link href="/sign-in">
-                        <Button variant="ghost" className="text-slate-300 hover:text-white hover:bg-white/5 transition-colors">Sign In</Button>
-                    </Link>
-                    <Link href="/sign-up">
-                        <Button className="bg-white text-slate-950 hover:bg-slate-200 transition-colors font-semibold shadow-xl shadow-white/10">
-                            Get Started
-                        </Button>
-                    </Link>
-                </SignedOut>
-                <SignedIn>
-                    <Link href="/dashboard">
-                        <Button variant="ghost" className="text-emerald-400 hover:text-emerald-300 hover:bg-emerald-400/10 transition-colors font-semibold mr-2">
-                            Dashboard
-                        </Button>
-                    </Link>
-                    <div className="ring-2 ring-emerald-500/20 rounded-full p-0.5 mt-1">
-                        <UserButton appearance={{ elements: { avatarBox: "w-8 h-8" } }} />
-                    </div>
-                </SignedIn>
+                {!userId && (
+                    <>
+                        <Link href="/sign-in">
+                            <Button variant="ghost" className="text-slate-300 hover:text-white hover:bg-white/5 transition-colors">Sign In</Button>
+                        </Link>
+                        <Link href="/sign-up">
+                            <Button className="bg-white text-slate-950 hover:bg-slate-200 transition-colors font-semibold shadow-xl shadow-white/10">
+                                Get Started
+                            </Button>
+                        </Link>
+                    </>
+                )}
+                {userId && (
+                    <>
+                        <Link href="/dashboard">
+                            <Button variant="ghost" className="text-emerald-400 hover:text-emerald-300 hover:bg-emerald-400/10 transition-colors font-semibold mr-2">
+                                Dashboard
+                            </Button>
+                        </Link>
+                        <div className="ring-2 ring-emerald-500/20 rounded-full p-0.5 mt-1">
+                            <UserButton appearance={{ elements: { avatarBox: "w-8 h-8" } }} />
+                        </div>
+                    </>
+                )}
             </nav>
         </header>
     );
