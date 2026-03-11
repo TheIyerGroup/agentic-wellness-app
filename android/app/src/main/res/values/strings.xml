@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">Agentic Wellness</string>
+    <string name="title_activity_main">Agentic Wellness</string>
+    <string name="package_name">com.iyergroup.wellness</string>
+    <string name="custom_url_scheme">com.iyergroup.wellness</string>
+</resources>
