@@ -9,24 +9,7 @@ export default function Home() {
       <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-emerald-600/20 rounded-full blur-[120px] pointer-events-none" />
       <div className="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] bg-cyan-600/20 rounded-full blur-[120px] pointer-events-none" />
 
-      <header className="px-6 lg:px-12 flex h-20 items-center justify-between border-b border-white/10 bg-slate-950/50 backdrop-blur-md sticky top-0 z-50">
-        <div className="flex items-center gap-3 relative z-10">
-          <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-emerald-400 to-cyan-500 flex items-center justify-center shadow-lg shadow-emerald-500/20">
-            <Activity className="w-5 h-5 text-slate-950" />
-          </div>
-          <h1 className="text-xl font-bold tracking-tight text-white">Agentic Wellness</h1>
-        </div>
-        <nav className="flex gap-4 relative z-10">
-          <Link href="/sign-in">
-            <Button variant="ghost" className="text-slate-300 hover:text-white hover:bg-white/5 transition-colors">Sign In</Button>
-          </Link>
-          <Link href="/sign-up">
-            <Button className="bg-white text-slate-950 hover:bg-slate-200 transition-colors font-semibold shadow-xl shadow-white/10">
-              Get Started
-            </Button>
-          </Link>
-        </nav>
-      </header>
+
 
       <main className="flex-1 flex flex-col items-center justify-center text-center px-4 py-32 relative z-10">
         {/* Animated Badge */}

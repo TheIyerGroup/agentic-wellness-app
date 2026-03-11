@@ -14,6 +14,7 @@ const geistMono = Geist_Mono({
 });
 
 import { Footer } from "@/components/Footer";
+import { Header } from "@/components/Header";
 
 export const metadata: Metadata = {
   title: "Agentic Wellness Automator",
@@ -32,6 +33,7 @@ export default function RootLayout({
           className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-screen flex flex-col`}
         >
           <div className="flex-1 flex flex-col">
+            <Header />
             {children}
           </div>
           <Footer />
